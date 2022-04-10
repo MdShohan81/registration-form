@@ -1,16 +1,18 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import './Login.css'
-import useFirebase from '../../hooks/useFirebase';
 
-const Login = () => {
-    const {signWithGoogle} = useFirebase();
+const Registration = () => {
     return (
         <div className='container'>
             <div className="row">
                 <div className="col-md-12 w-50 mx-auto">
-                    <h3 className='text-center my-4'>Login Here!!</h3>
+                    <h3 className='text-center my-4'>Register Here!!</h3>
                     <Form>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Enter Name</Form.Label>
+                            <Form.Control type="text" placeholder="your name" />
+                        </Form.Group>
+
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" placeholder="example@gmail.com" />
@@ -28,15 +30,9 @@ const Login = () => {
                         </Button>
                         </Form>
                 </div>
-                <div className="col-md-12 text-center my-3">
-                    <span>or Login with</span>
-                    <div className='mt-4'>
-                        <button onClick={signWithGoogle} className='google-btn'>Sign In with google</button>
-                    </div>
-                </div>
             </div>
         </div>
     );
 };
 
-export default Login;
+export default Registration;
